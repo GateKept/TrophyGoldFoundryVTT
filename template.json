@@ -1,0 +1,123 @@
+{
+"Actor": {
+        "types": ["character", "npc"],
+        "character": {
+            "notes": "",
+            "ruin": {
+                    "value": 0,
+                    "label": "Ruin",
+                    "modifier": []
+                },
+            "armour": {
+                    "value": 0,
+                    "label": "Armour",
+                    "modifier": []
+                },
+
+            "attributes": {
+                
+                "armour": {
+                    "value": "",
+                    "label": "Armour",
+                    "modifier": []
+                },
+                "weapons": {
+                    "value": "",
+                    "label": "Weapons",
+                    "modifier": []
+                },
+                "background": {
+                    "value": "",
+                    "label": "Background",
+                    "modifier": []
+                },
+                "skills": {
+                    "value": "",
+                    "label": "Skills",
+                    "modifier": []
+                },
+                "occupation": {
+                    "value": "",
+                    "label": "Occupation",
+                    "modifier": []
+                },
+                "drive": {
+                    "value": "",
+                    "label": "Armour",
+                    "modifier": []
+                },
+                "gold": {
+                    "value": 0,
+                    "label": "Gold",
+                    "modifier": []
+                },
+                "burdens": {
+                    "value": 0,
+                    "label": "Burdens",
+                    "modifier": []
+                },
+                "hoard": {
+                    "value": 0,
+                    "label": "Hoard",
+                    "modifier": []
+                }
+            }
+        },
+    "npc": {
+            "notes": "",
+
+            "attributes": {
+                "endurance": {
+                    "value": 7,
+                    "label": "Endurance",
+                    "modifier": []
+                },
+                "tags": {
+                    "value": "",
+                    "label": "Tags",
+                    "modifier": []
+                },
+                "weakness": {
+                    "value": "",
+                    "label": "weakness",
+                    "modifier": []
+                }
+            }
+        }
+    },
+    "Item": {
+        "types": ["item", "power"],
+        "item": {
+            "notes": "",
+
+            "attributes": {
+                "uses": {
+                    "value": 0,
+                    "label": "Uses",
+                    "modifier": []
+                },
+                "worth": {
+                    "value": 0,
+                    "label": "Worth in Gold",
+                    "modifier": []
+                }
+            }
+        },
+        "power": {
+            "notes": "",
+
+            "attributes": {
+                "source": {
+                    "source": "",
+                    "label": "Source",
+                    "modifier": []
+                },
+                "type": {
+                    "value": "",
+                    "label": "Ritual, Sigil, Other",
+                    "modifier": []
+                }
+            }
+        }
+    }
+}
