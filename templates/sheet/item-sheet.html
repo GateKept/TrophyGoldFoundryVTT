@@ -1,0 +1,32 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="notes">Notes</a>
+        <a class="item" data-tab="attributes">Attributes</a>
+    </nav>
+
+    <section class="sheet-body">
+        
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+        </div>
+
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+                        
+            <label  class="attribute-label"> Uses: </label>
+
+            <input  type="text"  name="data.attributes.uses.value"  value="{{data.attributes.uses.value}}"  data-dtype="Number"/>
+            
+            <label  class="attribute-label"> Value: </label>
+
+            <input  type="text"  name="data.attributes.worth.value"  value="{{data.attributes.worth.value}}"  data-dtype="Number"/>            
+           
+        </div>
+    </section>
+</form>

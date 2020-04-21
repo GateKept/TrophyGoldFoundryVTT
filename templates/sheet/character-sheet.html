@@ -1,0 +1,114 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+        </div>
+        <div class="header-fields">    
+            <div class="resource">
+            <label  class="resource-label"> Ruin: </label>
+                <input type="text" name="data.ruin.value" value="{{data.ruin.value}}" data-dtype="Number"/>
+            </div>
+            <div class="resource">
+            <label  class="resource-label"> Armour: </label>
+                <input type="text" name="data.armour.value" value="{{data.armour.value}}" data-dtype="Number"/>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="powers">Powers</a>
+        <a class="item" data-tab="notes">Notes</a>
+    </nav>
+
+    <section class="sheet-body">
+        
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            
+            <style>
+                input[type=number]{
+                    width: 8%
+                }
+            </style>
+            
+            <label  class="attribute-label"> Occupation: </label>
+
+            <input  type="text"  name="data.attributes.occupation.value"  value="{{data.attributes.occupation.value}}"  data-dtype="String"/>
+            
+            <label  class="attribute-label"> Background: </label>
+
+            <input  type="text"  name="data.attributes.background.value"  value="{{data.attributes.background.value}}"  data-dtype="String"/>
+            
+            <label  class="attribute-label"> Skills: </label>
+
+            <input  type="text"  name="data.attributes.skills.value"  value="{{data.attributes.skills.value}}"  data-dtype="String"/>
+            
+            <label  class="attribute-label"> Drive: </label>
+
+            <input  type="text"  name="data.attributes.drive.value"  value="{{data.attributes.drive.value}}"  data-dtype="String"/>
+            
+            <label  class="attribute-label"> Weapons: </label>
+
+            <input  type="text"  name="data.attributes.weapons.value"  value="{{data.attributes.weapons.value}}"  data-dtype="String"/>
+            
+            <label  class="attribute-label"> Armour: </label>
+
+            <input  type="text"  name="data.attributes.armour.value"  value="{{data.attributes.armour.value}}"  data-dtype="String"/>
+            <br><br>
+            
+            <label  class="attribute-label"> Gold: </label>
+
+            <input  type="number"  name="data.attributes.gold.value"  value="{{data.attributes.gold.value}}"  data-dtype="Number"/>
+            
+            <label  class="attribute-label"> Burdens: </label>
+
+            <input  type="number"  name="data.attributes.burdens.value"  value="{{data.attributes.burdens.value}}"  data-dtype="Number"/>
+            
+            <label  class="attribute-label"> Hoard: </label>
+
+            <input  type="number"  name="data.attributes.hoard.value"  value="{{data.attributes.hoard.value}}"  data-dtype="Number"/>
+           
+        </div>
+       
+        <div class="tab notes active" data-group="primary" data-tab="notes">
+            {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+        </div>
+
+        <div class="tab items" data-group="primary" data-tab="items">
+            <ol class="items-list">
+            {{#each actor.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <h4 class="item-summary">{{data.summary}}</h4>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        </div>
+        
+        <div class="tab items" data-group="primary" data-tab="powers">
+            <ol class="items-list">
+            {{#each actor.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <h4 class="item-summary">{{data.summary}}</h4>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        </div>
+
+       
+    </section>
+</form>
