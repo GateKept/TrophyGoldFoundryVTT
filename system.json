@@ -15,8 +15,7 @@
     "gridUnits": "ft",
     "primaryTokenAttribute": "ruin",
     "secondaryTokenAttribute": "armour",
-    "url": "",
-    "manifest": "",
-    "download": "",
+    "url": "https://github.com/GateKept/TrophyGoldFoundryVTT",
+    "manifest": "https://github.com/GateKept/TrophyGoldFoundryVTT/blob/master/system.json",
     "license": "LICENSE.txt"
 }
