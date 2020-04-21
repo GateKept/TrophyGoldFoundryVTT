@@ -71,6 +71,22 @@ Hooks.on("chatMessage", (html, content, msg) => {
         return false;
     }
     
+    else if (command[0] == "/weakpoint")
+    {
+        
+        //construct the rolls, including any text you want displayed with the results
+        let weakpointRoll = new Roll("Weak Point 1d6");
+        
+        //execute the rolls
+        weakpointRoll.roll();
+        
+        //display the rolls as new messages
+        weakpointRoll.toMessage();
+        
+        //tell Foundry not to display the initial message, just the result.
+        return false;
+    }
+    
     //let foundry continue as normal if the chatMessage didn't contain any listed commands
     else
         {
