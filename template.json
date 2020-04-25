@@ -16,24 +16,9 @@
 
             "attributes": {
                 
-                "armour": {
-                    "value": "",
-                    "label": "Armour",
-                    "modifier": []
-                },
-                "weapons": {
-                    "value": "",
-                    "label": "Weapons",
-                    "modifier": []
-                },
                 "background": {
                     "value": "",
                     "label": "Background",
-                    "modifier": []
-                },
-                "skills": {
-                    "value": "",
-                    "label": "Skills",
                     "modifier": []
                 },
                 "occupation": {
@@ -86,7 +71,7 @@
         }
     },
     "Item": {
-        "types": ["item", "power"],
+        "types": ["item", "power", "skill", "weapon", "armour"],
         "item": {
             "notes": "",
             "summary": "",
@@ -120,6 +105,18 @@
                     "modifier": []
                 }
             }
+        },
+        "skill": {
+            "notes": "",
+            "summary": ""
+        },
+        "weapon": {
+            "notes": "",
+            "summary": ""
+        },
+        "armour": {
+            "notes": "",
+            "summary": ""
         }
     }
 }

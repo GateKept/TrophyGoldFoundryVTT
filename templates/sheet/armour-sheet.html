@@ -8,7 +8,6 @@
 
     <nav class="sheet-tabs char-items-tabs tabs" data-group="primary">
         <a class="item" data-tab="notes">Notes</a>
-        <a class="item" data-tab="attributes">Attributes</a>
     </nav>
 
     <section class="sheet-body">
@@ -21,16 +20,5 @@
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
         </div>
 
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-                        
-            <label  class="attribute-label"> Source: </label>
-
-            <input  type="text"  name="data.attributes.source.value"  value="{{data.attributes.source.value}}"  data-dtype="String"/>
-            
-            <label  class="attribute-label"> Type: </label>
-
-            <input  type="text"  name="data.attributes.type.value"  value="{{data.attributes.type.value}}"  data-dtype="String"/>
-           
-        </div>
     </section>
 </form>

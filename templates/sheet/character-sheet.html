@@ -2,6 +2,7 @@
 
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
         </div>
@@ -18,7 +19,7 @@
         </div>
     </header>
 
-    <nav class="sheet-tabs tabs" data-group="primary">
+    <nav class="sheet-tabs char-items-tabs tabs" data-group="primary">
         <a class="item" data-tab="attributes">Attributes</a>
         <a class="item" data-tab="items">Items</a>
         <a class="item" data-tab="powers">Powers</a>
@@ -43,21 +44,62 @@
 
             <input  type="text"  name="data.attributes.background.value"  value="{{data.attributes.background.value}}"  data-dtype="String"/>
             
-            <label  class="attribute-label"> Skills: </label>
-
-            <input  type="text"  name="data.attributes.skills.value"  value="{{data.attributes.skills.value}}"  data-dtype="String"/>
-            
             <label  class="attribute-label"> Drive: </label>
 
             <input  type="text"  name="data.attributes.drive.value"  value="{{data.attributes.drive.value}}"  data-dtype="String"/>
             
+            <label  class="attribute-label"> Skills: </label>
+            
+            <ol class="items-list">
+            {{#each actor.skills as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <h4 class="item-summary">{{data.summary}}</h4>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+                
+            
+            
             <label  class="attribute-label"> Weapons: </label>
-
-            <input  type="text"  name="data.attributes.weapons.value"  value="{{data.attributes.weapons.value}}"  data-dtype="String"/>
+            
+            <ol class="items-list">
+            {{#each actor.weapons as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <h4 class="item-summary">{{data.summary}}</h4>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        
             
             <label  class="attribute-label"> Armour: </label>
 
-            <input  type="text"  name="data.attributes.armour.value"  value="{{data.attributes.armour.value}}"  data-dtype="String"/>
+            
+            <ol class="items-list">
+            {{#each actor.armour as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <h4 class="item-summary">{{data.summary}}</h4>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        
             <br><br>
             
             <label  class="attribute-label"> Gold: </label>
@@ -83,7 +125,7 @@
             <ol class="items-list">
             {{#each actor.equipment as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
                     <h4 class="item-name">{{item.name}}</h4>
                     <h4 class="item-summary">{{data.summary}}</h4>
                     <div class="item-controls">
@@ -99,7 +141,7 @@
             <ol class="items-list">
             {{#each actor.powers as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
                     <h4 class="item-name">{{item.name}}</h4>
                     <h4 class="item-summary">{{data.summary}}</h4>
                     <div class="item-controls">
