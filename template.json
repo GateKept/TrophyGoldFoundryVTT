@@ -89,6 +89,7 @@
         "types": ["item", "power"],
         "item": {
             "notes": "",
+            "summary": "",
 
             "attributes": {
                 "uses": {
@@ -105,6 +106,7 @@
         },
         "power": {
             "notes": "",
+            "summary": "",
 
             "attributes": {
                 "source": {

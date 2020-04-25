@@ -14,6 +14,7 @@
             <label  class="resource-label"> Armour: </label>
                 <input type="text" name="data.armour.value" value="{{data.armour.value}}" data-dtype="Number"/>
             </div>
+            
         </div>
     </header>
 
@@ -67,6 +68,7 @@
 
             <input  type="number"  name="data.attributes.burdens.value"  value="{{data.attributes.burdens.value}}"  data-dtype="Number"/>
             
+            
             <label  class="attribute-label"> Hoard: </label>
 
             <input  type="number"  name="data.attributes.hoard.value"  value="{{data.attributes.hoard.value}}"  data-dtype="Number"/>
@@ -79,7 +81,7 @@
 
         <div class="tab items" data-group="primary" data-tab="items">
             <ol class="items-list">
-            {{#each actor.items as |item id|}}
+            {{#each actor.equipment as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <h4 class="item-name">{{item.name}}</h4>
@@ -95,7 +97,7 @@
         
         <div class="tab items" data-group="primary" data-tab="powers">
             <ol class="items-list">
-            {{#each actor.items as |item id|}}
+            {{#each actor.powers as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <h4 class="item-name">{{item.name}}</h4>

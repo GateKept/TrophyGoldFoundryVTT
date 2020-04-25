@@ -14,6 +14,10 @@
     <section class="sheet-body">
         
         <div class="tab" data-group="primary" data-tab="notes">
+            <input  type="text"  name="data.attributes.summary.value"  value="{{data.attributes.summary.value}}"  data-dtype="String"/>
+            <br><br>
+            
+            <label class="attribute-label">Notes</label>
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
         </div>
 

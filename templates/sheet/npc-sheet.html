@@ -38,7 +38,7 @@
             <label class="attribute-label">Special Abilities</label>
             
             <ol class="items-list">
-            {{#each actor.items as |item id|}}
+            {{#each actor.powers as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <h4 class="item-name">{{item.name}}</h4>
@@ -56,7 +56,7 @@
         <div class="tab items" data-group="primary" data-tab="items">
             
             <ol class="items-list">
-            {{#each actor.items as |item id|}}
+            {{#each actor.equipment as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <h4 class="item-name">{{item.name}}</h4>

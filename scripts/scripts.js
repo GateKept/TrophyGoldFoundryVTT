@@ -83,6 +83,10 @@ Hooks.on("chatMessage", (html, content, msg) => {
         //display the rolls as new messages
         weakpointRoll.toMessage();
         
+        //set the Player's weakpoint
+        let weakpointValue = weakpointRoll.result;
+        
+        
         //tell Foundry not to display the initial message, just the result.
         return false;
     }
