@@ -1,22 +1,20 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    <header class="trophy-header">
+        
+        <div class="trophy-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Name"/>
         </div>
+        <img class="trophy-profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     </header>
 
-    <nav class="sheet-tabs char-items-tabs tabs" data-group="primary">
-        <a class="item" data-tab="notes">Notes</a>
-    </nav>
 
     <section class="sheet-body">
         
-        <div class="tab" data-group="primary" data-tab="notes">
+        <div class="trophy-notes">
             <input  type="text"  name="data.attributes.summary.value"  value="{{data.attributes.summary.value}}"  data-dtype="String"/>
             <br><br>
             
-            <label class="attribute-label">Notes</label>
+            <label>Notes</label>
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
         </div>
 

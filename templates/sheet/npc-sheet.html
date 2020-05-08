@@ -1,46 +1,44 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-    <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+    <header class="trophy-header">
+        
+        <div class="trophy-name">
+            <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
         </div>
         
-        <div class="header-fields">
-                <div class="resource">
-        <label  class="resource-label"> Endurance: </label>
-                <input type="text" name="data.attributes.endurance.value" value="{{data.attributes.endurance.value}}" data-dtype="Number"/>
+        <div class="trophy-resources">
+                <div class="trophy-ruin">
+                    <label>Endurance</label>
+                    <input type=number name="data.attributes.endurance.value" value="{{data.attributes.endurance.value}}" max="24" min="1" data-dtype="Number"/>
             </div>
-            
         </div>
-        
+        <img class=trophy-profile-img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
         
     </header>
 
-    <nav class="sheet-tabs char-items-tabs tabs" data-group="primary">
-        <a class="item" data-tab="attributes">Attributes</a>
-        <a class="item" data-tab="items">Items</a>
-        <a class="item" data-tab="notes">Notes</a>
-    </nav>
-
-    <section class="sheet-body">
+    <section class="trophy-content sheet-body">
         
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-                        
-            <label  class="attribute-label"> Tags: </label>
+        <div class="trophy-main-head">
+            <div class="trophy-tags">            
+                <label  class="attribute-label">Tags: </label>
 
-            <input  type="text"  name="data.attributes.tags.value"  value="{{data.attributes.tags.value}}"  data-dtype="String"/><br><br>
-            
+                <input  type="text"  name="data.attributes.tags.value"  value="{{data.attributes.tags.value}}"  data-dtype="String"/>
+            </div>
+            <div class="trophy-weakness">
             <label  class="attribute-label"> Weakness: </label>
 
-            <input  type="text"  name="data.attributes.weakness.value"  value="{{data.attributes.weakness.value}}"  data-dtype="String"/><br><br>
+            <input  type="text"  name="data.attributes.weakness.value"  value="{{data.attributes.weakness.value}}"  data-dtype="String"/>
+            </div>
             
-            <label class="attribute-label">Special Abilities</label>
+            </div>
+            
+        <div class="trophy-main-content">
+            <div class="trophy-monster-abilities">
+            <label>Special Abilities</label>
             
             <ol class="items-list">
             {{#each actor.powers as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
                     <h4 class="item-name">{{item.name}}</h4>
                     <h4 class="item-summary">{{data.summary}}</h4>
                     <div class="item-controls">
@@ -50,15 +48,12 @@
                 </li>
             {{/each}}
             </ol>
-                        
-        </div>
-       
-        <div class="tab items" data-group="primary" data-tab="items">
-            
-            <ol class="items-list">
+            </div>          
+            <div class="trophy-monster-inventory">
+                <label>Likely Treasure</label>
+                <ol class="items-list">
             {{#each actor.equipment as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="30" height="30"/>
                     <h4 class="item-name">{{item.name}}</h4>
                     <h4 class="item-summary">{{data.summary}}</h4>
                     <div class="item-controls">
@@ -68,9 +63,12 @@
                 </li>
             {{/each}}
             </ol>
-        </div>
+            </div>
         
-        <div class="tab notes" data-group="primary" data-tab="notes">
+        </div>
+               
+        <div class="trophy-notes">
+            <label>Notes</label>
             {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
         </div>
 

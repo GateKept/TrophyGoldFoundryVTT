@@ -2,7 +2,7 @@
     "name": "trophygold",
     "title": "Trophy Gold",
     "description": "A simple implementation of Trophy Gold, for use with Foundry VTT",
-    "version": 0.15,
+    "version": 0.2,
     "minimumCoreVersion": "0.5.5",
     "compatibleCoreVersion": "0.5.5",
     "templateVersion": 2,
@@ -16,6 +16,6 @@
     "primaryTokenAttribute": "ruin",
     "secondaryTokenAttribute": "armour",
     "url": "https://github.com/GateKept/TrophyGoldFoundryVTT",
-    "manifest": "https://github.com/GateKept/TrophyGoldFoundryVTT/blob/master/system.json",
+    "manifest": "https://raw.githubusercontent.com/GateKept/TrophyGoldFoundryVTT/master/system.json",
     "license": "LICENSE.txt"
 }

@@ -5,7 +5,7 @@ export class TrophyActorSheet extends ActorSheet {
   	  classes: ["sheet", "actor"],
       width: 675,
       height: 750,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "attributes"}]
+      tabs: [{navSelector: ".trophy-tabs", contentSelector: ".tab", initial: "tab1"}]
     });
   }
     
@@ -53,6 +53,7 @@ export class TrophyActorSheet extends ActorSheet {
         armour.push(i);
       }
     }
+        
 
     
     actorData.powers = powers;
@@ -77,25 +78,27 @@ export class TrophyActorSheet extends ActorSheet {
     if (!this.options.editable) return;
 
     // Owned Item management
-//    html.find('.item-create').click(this.onItemCreate.bind(this));
+    html.find('.item-create').click(this.onItemCreate.bind(this));
     html.find('.item-edit').click(this.onItemEdit.bind(this));
     html.find('.item-delete').click(this.onItemDelete.bind(this));
 
+        
+        
     }
     
-//  onItemCreate(event) {
-//    event.preventDefault();
-//    const header = event.currentTarget;
-//    const type = header.dataset.type;
-//    const data = duplicate(header.dataset);
-//    const itemData = {
-//      name: `New ${type.capitalize()}`,
-//      type: type,
-//      data: data
-//    };
-//    delete itemData.data["type"];
-//    return this.actor.createOwnedItem(itemData);
-//  }
+  onItemCreate(event) {
+    event.preventDefault();
+    const header = event.currentTarget;
+    const type = header.dataset.type;
+    const data = duplicate(header.dataset);
+    const itemData = {
+      name: `New ${type.capitalize()}`,
+      type: type,
+      data: data
+    };
+    delete itemData.data["type"];
+    return this.actor.createOwnedItem(itemData);
+  }
 
   onItemEdit(event) {
     event.preventDefault();
